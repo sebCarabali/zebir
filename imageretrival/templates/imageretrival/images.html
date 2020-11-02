@@ -1,0 +1,32 @@
+{% extends './base.html' %}
+{% block content %}
+    <section class="page-section">
+        <div class="container">
+            <!-- Portfolio Section Heading-->
+            <h2 class="page-section-heading text-center text-uppercase text-secondary mb-0">Tus Imágenes</h2>
+            
+            <div class="divider-custom">
+                <div class="divider-custom-line"></div>
+                <div class="divider-custom-icon"><i class="fas fa-star"></i></div>
+                <div class="divider-custom-line"></div>
+            </div>
+            <div class="row">
+                <a class="btn bg-success text-white add-image-btn" href="/subir-imagen" >Subir imagen</a>
+            </div>
+            <div class="row">
+                {% for img in images %}
+                    <div class="col-md-4 col-sm-12 image">
+                        <div class="card">
+                            <img class="card-img-top" src="{{ img.file.url }}" alt="{{ img.title }}">
+                            <div class="card-body">
+                                <div class="card-title">{{ img.title }}</div>
+                                <a href="{% url 'detalle' image_id=img.id %}" class="btn btn-primary">Ver</a>
+                                <a href="{% url 'eliminar' image_id=img.id %}" class="btn btn-warning">Eliminar</a>
+                            </div>
+                        </div>
+                    </div>
+                {% endfor %}
+            </div>
+        </div>
+    </section>
+{% endblock content %}

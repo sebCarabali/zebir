@@ -1,0 +1,31 @@
+{% extends './base.html' %}
+{% block content %}
+    <section class="page-section">
+        
+        <div class="container">
+                <!-- Portfolio Section Heading-->
+                <h2 class="page-section-heading text-center text-uppercase text-secondary mb-0">Detalle imagen</h2>
+                    
+                <div class="divider-custom">
+                    <div class="divider-custom-line"></div>
+                    <div class="divider-custom-icon"><i class="fas fa-star"></i></div>
+                    <div class="divider-custom-line"></div>
+                </div>
+
+                <div class="row">
+                    <div class="col-md-8 col-sd-12">
+                        <img class="detail-img" style="width:100%;" src="{{ image.file.url }}" alt="{{ image.title }}">
+                    </div>
+                    <div class="col-md-4 col-sd-12">
+                        <div class="detail">
+                            <span>Url</span>
+                            <p>{{ image.file.url }}</p>
+                        </div>
+                        <div class="detail">
+                            <span>Subido en</span>
+                            <p>{{ image.created_at | date:"SHORT_DATE_FORMAT" }}</p>
+                        </div>
+                    </div>
+                </div>
+        </div>
+{% endblock content %}

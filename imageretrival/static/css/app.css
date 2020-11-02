@@ -1,0 +1,19 @@
+.page-section {
+    margin-top: 30px !important;
+}
+
+.image {
+    margin-top: 10px;
+}
+
+.add-image-btn {
+    color: white;
+    padding: 10px;
+    font-weight: bold;
+    margin-left: 30px;
+}
+
+.detail-img {
+    width: 500px;
+    height: 500px;
+}
