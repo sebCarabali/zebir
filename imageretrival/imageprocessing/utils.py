@@ -1,6 +1,6 @@
 import json
 import numpy as np
-from io import StringIO
+
 
 def to_json(npdescriptor):
     return json.dumps(npdescriptor.tolist())

@@ -1,3 +1,4 @@
+from imageretrival.imageprocessing.utils import to_json
 from django.http import request
 from django.http.response import HttpResponse
 from django.shortcuts import render, redirect
@@ -5,6 +6,7 @@ from .models import Descriptor, Image
 from .imageprocessing.featureextraction import ORBExtractor
 from django.contrib.auth import logout as do_logout
 from django.contrib import messages
+from .imageprocessing.utils import to_json
 # Create your views here.
 
 
@@ -37,7 +39,7 @@ def upload(request):
             descriptor = Descriptor()
             descriptor.rows = orb_result.shape[0]
             descriptor.cols = orb_result.shape[1]
-            descriptor.content = str(orb.to_json(orb_result)).replace(' ', '')
+            descriptor.content = str(to_json(orb_result)).replace(' ', '')
             descriptor.image = image
             descriptor.save()
             messages.success(request, 'La imagen se ha cargado correctamente')
