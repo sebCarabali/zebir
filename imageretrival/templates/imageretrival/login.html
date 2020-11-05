@@ -1,6 +1,5 @@
 {% extends './base.html' %}
 {% block content %}
-    {% include './messages.html' %}
     <section class="page-section">
         <!-- Portfolio Section Heading-->
         <div class="container">
@@ -11,7 +10,7 @@
                 <div class="divider-custom-icon"><i class="fas fa-star"></i></div>
                 <div class="divider-custom-line"></div>
             </div>
-
+            {% include './messages.html' %}
             <div class="row justify-content-center">
                 <div class="col-md-8 ">
                     <form action="/do_login" method="post">

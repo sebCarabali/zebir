@@ -24,9 +24,9 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = 'k8it05kh#3rh4_*tdm5rihbn-fze41v@y9f3tf87z5wta20g=_'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['https://zebir.herokuapp.com/', 'http://127.0.0.1']
 
 
 # Application definition
@@ -78,9 +78,13 @@ WSGI_APPLICATION = 'zebir.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'djongo',
-        'NAME': 'zebir',
-        'HOST': '127.0.0.1',
-        'PORT': '27017',
+        "CLIENT": {
+            "name": 'zebir',
+            "host": 'mongodb+srv://imageretrival:ZyArzx2JRywCYtb7@cluster0.yeisc.mongodb.net/zebir?retryWrites=true&w=majority',
+            "username": 'imageretrival',
+            "password": 'ZyArzx2JRywCYtb7',
+            "authMechanism": "SCRAM-SHA-1",
+        }
     }
 }
 
@@ -128,7 +132,7 @@ STATICFILES_DIRS = (
 )
 
 MEDIA_ROOT = (
-BASE_DIR
+    BASE_DIR
 )
 
 MEDIA_URL = '/media/'

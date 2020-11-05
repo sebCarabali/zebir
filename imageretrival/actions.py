@@ -16,8 +16,8 @@ def do_login(request):
 
     if user is not None:
         login(request, user)
+        print('logeado')
         return redirect('/imagenes')
-
     else:
         messages.error(request, 'Nombre de usuario o contraseña incorrecta')
         return redirect('/login')
