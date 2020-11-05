@@ -1,1 +1,1 @@
-web: gunicorn zbir/wsgi.py --log-file -
+web: gunicorn zbir/wsgi --log-file -

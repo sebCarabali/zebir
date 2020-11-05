@@ -26,7 +26,7 @@ SECRET_KEY = 'k8it05kh#3rh4_*tdm5rihbn-fze41v@y9f3tf87z5wta20g=_'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = False
 
-ALLOWED_HOSTS = ['https://zebir.herokuapp.com/', 'http://127.0.0.1']
+ALLOWED_HOSTS = ['zebir.herokuapp.com', 'http://127.0.0.1']
 
 
 # Application definition
@@ -133,8 +133,9 @@ STATICFILES_DIRS = (
     os.path.join(BASE_DIR, "static"),
 )
 
+
 MEDIA_ROOT = (
-    os.path.join(BASE_DIR, 'static/images')
+    BASE_DIR
 )
 
 MEDIA_URL = '/media/'
