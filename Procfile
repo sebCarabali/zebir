@@ -1,1 +1,1 @@
-web: gunicorn zbir/wsgi --log-file -
+web: gunicorn zebir/wsgi --log-file -
