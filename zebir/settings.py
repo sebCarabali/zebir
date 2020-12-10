@@ -43,7 +43,7 @@ INSTALLED_APPS = [
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
-    #'whitenoise.middleware.WhiteNoiseMiddleware',
+    # 'whitenoise.middleware.WhiteNoiseMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.common.CommonMiddleware',
     'django.middleware.csrf.CsrfViewMiddleware',
@@ -78,14 +78,10 @@ WSGI_APPLICATION = 'zebir.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'djongo',
-        "CLIENT": {
-            "name": 'zebir',
-            "host": 'mongodb+srv://imageretrival:ZyArzx2JRywCYtb7@cluster0.yeisc.mongodb.net/zebir?retryWrites=true&w=majority',
-            "username": 'imageretrival',
-            "password": 'ZyArzx2JRywCYtb7',
-            "authMechanism": "SCRAM-SHA-1",
-        }
+        # Add 'postgresql_psycopg2', 'mysql', 'sqlite3' or 'oracle'.
+        'ENGINE': 'django.db.backends.sqlite3',
+        # Or path to database file if using sqlite3.
+        'NAME': 'sqlite3.db',
     }
 }
 
